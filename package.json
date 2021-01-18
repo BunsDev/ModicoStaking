@@ -1,0 +1,82 @@
+{
+  "name": "@uni/ModicoStaking",
+  "version": "1.0.0",
+  "description": "Solidity contracts for rewarding stakers.",
+  "author": "cryptounico@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "buidler compile",
+    "deploy": "buidler deploy",
+    "export": "buidler export --export build/abi.json",
+    "export:all": "buidler export --export-all build/abi.json",
+    "gen-types": "run-p gen-types:*",
+    "gen-types:ethers": "typechain --target=ethers-v5 --outDir=build/types/ethers \"build/artifacts/*.json\"",
+    "gen-types:web3": "typechain --target=web3-v1 --outDir=build/types/web3 \"build/artifacts/*.json\"",
+    "lint": "run-p lint:*",
+    "lint:tsc": "tsc --noEmit",
+    "lint:eslint": "eslint \"*/**/*.{js,jsx,ts,tsx}\"",
+    "lint:sol": "solhint contracts/**/*.sol",
+    "preinstall": "npx only-allow pnpm",
+    "test": "buidler test",
+    "verify": "buidler etherscan-verify --solc-input",
+    "clean": "shx rm -rf build",
+    "clean:dev": "rm -rf build node_modules"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint"
+    ],
+    "*.sol": [
+      "solhint"
+    ]
+  },
+  "devDependencies": {
+    "@ethersproject/abi": "^5.0.7",
+    "@ethersproject/bignumber": "^5.0.8",
+    "@ethersproject/bytes": "^5.0.5",
+    "@ethersproject/contracts": "^5.0.5",
+    "@ethersproject/providers": "^5.0.12",
+    "@ethersproject/units": "^5.0.6",
+    "@ethersproject/wallet": "^5.0.5",
+    "@nomiclabs/buidler": "^1.4.7",
+    "@nomiclabs/buidler-ethers": "^2.0.2",
+    "@nomiclabs/buidler-waffle": "^2.1.0",
+    "@openzeppelin/contracts": "^3.2.1-solc-0.7",
+    "@sinonjs/fake-timers": "^6.0.1",
+    "@typechain/ethers-v5": "^1.0.0",
+    "@typechain/web3-v1": "^1.0.0",
+    "@types/chai": "^4.2.13",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.7",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "buidler-deploy": "^0.6.0-beta.28",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "ethereum-waffle": "^3.1.1",
+    "ethers": "^5.0.17",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "mocha": "^8.1.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "prettier-plugin-solidity": "^1.0.0-alpha.59",
+    "shx": "^0.3.2",
+    "solc": "^0.7.3",
+    "solhint": "^3.2.1",
+    "solhint-plugin-prettier": "0.0.5",
+    "ts-node": "^9.0.0",
+    "typechain": "^2.0.1",
+    "typescript": "^4.0.3"
+  }
+}

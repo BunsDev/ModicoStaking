@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"module": "commonjs",
+		"target": "es5",
+		"strict": true,
+		"strictNullChecks": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"baseUrl": "./src",
+		"paths": {
+			"@abis/*": ["../build/artifacts/*"],
+			"@contracts/*": ["../build/types/*"],
+			"@utils/*": ["utils/*"]
+		}
+	},
+	"include": [
+		"deploy/**/*",
+		"test/**/*",
+		"src/**/*",
+		"build/types/ethers/*"
+	],
+	"files": [
+		"./buidler.config.ts",
+		"./node_modules/@nomiclabs/buidler-ethers/src/type-extensions.d.ts",
+		"./node_modules/@nomiclabs/buidler-waffle/src/type-extensions.d.ts",
+		"./node_modules/buidler-deploy/src/type-extensions.d.ts"
+	],
+	"compileOnSave": false
+}
