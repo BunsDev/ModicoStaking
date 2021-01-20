@@ -1,6 +1,6 @@
 # ModicoStaking
 
-Moduler Solidity Smart Contracts to Reward SAStakers.
+Modular Solidity Smart Contracts to Reward SAStakers.
 
 Incorporates:
 
